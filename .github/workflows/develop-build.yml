@@ -1,0 +1,20 @@
+name: GitHub Pages Deploy [develop]
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: yarn install
+      - run: yarn vite build --base=/dg-basic-react/
+
+      - uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: dist
