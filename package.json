@@ -13,10 +13,14 @@
     "lint:ts": "tsc --noEmit"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.8.1",
     "effector": "^22.3.0",
     "effector-react": "^22.0.6",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-router-dom": "6"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
