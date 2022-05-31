@@ -1,16 +1,18 @@
 import React from 'react';
-import { Card, CardContent, CardHeader } from '@mui/material';
+import { Card, CardContent, CardHeader } from 'shared/ui';
 
-const UserProfilePage = () => {
+const UserPage = () => {
   React.useEffect(() => {
-    document.title = 'User Profile | YK Vite App';
+    document.title = 'User | YK Vite App';
   }, []);
 
   return (
     <Card
       variant="outlined"
       sx={{
+        mt: 2,
         height: 300,
+        borderRadius: 3,
       }}
     >
       <CardHeader title="Profile"></CardHeader>
@@ -19,4 +21,4 @@ const UserProfilePage = () => {
   );
 };
 
-export default UserProfilePage;
+export { UserPage };
