@@ -7,12 +7,7 @@ import { Link as RouterLink } from 'react-router-dom';
 const MainAppBar = () => {
   return (
     <React.Fragment>
-      <AppBar
-        variant="outlined"
-        position="sticky"
-        sx={{ backgroundColor: 'Gold' }}
-        // color="inherit"
-      >
+      <AppBar position="sticky" sx={{ backgroundColor: 'Gold' }}>
         <Container>
           <Toolbar variant="dense">
             <Typography
