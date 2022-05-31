@@ -1,6 +1,5 @@
 import React from 'react';
-import { Typography, Box, Link } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { Typography, Box } from 'shared/ui';
 
 const HomePage = () => {
   React.useEffect(() => {
@@ -10,10 +9,7 @@ const HomePage = () => {
   return (
     <Box
       sx={{
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        my: 10,
       }}
     >
       <Typography variant="h2" align="center" gutterBottom>
@@ -28,16 +24,9 @@ const HomePage = () => {
             ml: 2,
           },
         }}
-      >
-        <Link component={RouterLink} to="/user/profile" underline="hover">
-          Profile
-        </Link>
-        <Link component={RouterLink} to="/user/account" underline="hover">
-          Account
-        </Link>
-      </Box>
+      ></Box>
     </Box>
   );
 };
 
-export default HomePage;
+export { HomePage };

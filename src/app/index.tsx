@@ -1,30 +1,22 @@
 import React from 'react';
-import {
-  Container,
-  CssBaseline,
-  createTheme,
-  ThemeProvider as MuiThemeProvider,
-} from '@mui/material';
+import { BrowserRouter } from 'react-router-dom';
 
-import Routing from './Routing';
+import { ThemeProvider } from './providers';
+import { MainAppBar } from 'widgets';
+import { Routes } from 'pages';
+import { Container } from 'shared/ui';
 
-const App = () => {
-  const theme = createTheme({
-    palette: {
-      background: {
-        default: '#f1f5f9',
-      },
-    },
-  });
-
+const App: React.FC = () => {
   return (
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <Container>
-        <Routing />
-      </Container>
-    </MuiThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider>
+        <MainAppBar />
+        <Container>
+          <Routes />
+        </Container>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 
-export default App;
+export { App };
