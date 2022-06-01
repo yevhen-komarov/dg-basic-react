@@ -1,4 +1,5 @@
 import React from 'react';
+import { UserCard } from 'widgets/user-card';
 import { Card, CardContent, CardHeader } from 'shared/ui';
 
 const UserPage = () => {
@@ -6,19 +7,7 @@ const UserPage = () => {
     document.title = 'User | YK Vite App';
   }, []);
 
-  return (
-    <Card
-      variant="outlined"
-      sx={{
-        mt: 2,
-        height: 300,
-        borderRadius: 3,
-      }}
-    >
-      <CardHeader title="Profile"></CardHeader>
-      <CardContent></CardContent>
-    </Card>
-  );
+  return <UserCard />;
 };
 
 export { UserPage };
