@@ -29,12 +29,6 @@
     "eqeqeq": "error",
     "react/prop-types": "off",
     "radix": "warn",
-    "no-console": ["warn", { "allow": ["debug", "warn", "error", "assert"] }],
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ]
+    "no-console": ["warn", { "allow": ["debug", "warn", "error", "assert"] }]
   }
 }

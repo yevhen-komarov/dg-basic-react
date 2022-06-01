@@ -1,4 +1,9 @@
+export { default } from '@mui/material/SvgIcon';
+
 export {
+  CssBaseline,
+  createTheme,
+  ThemeProvider,
   Container,
   Typography,
   Box,

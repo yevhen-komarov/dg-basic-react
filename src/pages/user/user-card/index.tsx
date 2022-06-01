@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, CardContent, Box, CardActions, Button, TextField } from 'shared/ui';
-import EditIcon from '@mui/icons-material/Edit';
-import SaveIcon from '@mui/icons-material/Save';
-import CancelIcon from '@mui/icons-material/Cancel';
+
+import EditIcon from 'shared/ui';
+import SaveIcon from 'shared/ui';
+import CancelIcon from 'shared/ui';
 
 const defaultUser = {
   user_id: 'custom|123',

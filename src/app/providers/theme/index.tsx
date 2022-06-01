@@ -1,9 +1,9 @@
 import React from 'react';
-import { CssBaseline, createTheme, ThemeProvider as MUIThemeProvider, Theme } from '@mui/material';
+import { CssBaseline, createTheme, ThemeProvider as MUIThemeProvider } from 'shared/ui';
 import backgroundImage from './background-image.jpg';
 
 const ThemeProvider: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
-  const theme: Theme = createTheme({
+  const theme = createTheme({
     palette: {
       background: {
         default: '#f1f5f9',
