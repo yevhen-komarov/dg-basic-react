@@ -1,9 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Box, CardActions, Button, TextField } from 'shared/ui';
-
-import EditIcon from 'shared/ui';
-import SaveIcon from 'shared/ui';
-import CancelIcon from 'shared/ui';
+import { EditIcon, SaveIcon, CancelIcon } from 'shared/ui';
 
 const defaultUser = {
   user_id: 'custom|123',
@@ -33,9 +30,14 @@ const UserCard = () => {
         borderRadius: 4,
       }}
     >
-      <CardActions>
+      <CardActions
+        sx={{
+          mx: 2,
+        }}
+      >
         {!isEditing && (
           <Button
+            disableElevation
             startIcon={<EditIcon />}
             size="small"
             onClick={() => {
@@ -47,6 +49,7 @@ const UserCard = () => {
         )}
         {isEditing && (
           <Button
+            disableElevation
             startIcon={<CancelIcon />}
             size="small"
             onClick={() => {
@@ -57,7 +60,13 @@ const UserCard = () => {
           </Button>
         )}
         {isEditing && (
-          <Button startIcon={<SaveIcon />} size="small" variant="contained" onClick={onClickSave}>
+          <Button
+            disableElevation
+            startIcon={<SaveIcon />}
+            size="small"
+            variant="contained"
+            onClick={onClickSave}
+          >
             Save
           </Button>
         )}

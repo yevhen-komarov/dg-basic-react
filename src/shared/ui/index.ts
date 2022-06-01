@@ -1,4 +1,7 @@
-export { default } from '@mui/material/SvgIcon';
+export { default as AccountCircle } from '@mui/icons-material/AccountCircle';
+export { default as EditIcon } from '@mui/icons-material/Edit';
+export { default as SaveIcon } from '@mui/icons-material/Save';
+export { default as CancelIcon } from '@mui/icons-material/Cancel';
 
 export {
   CssBaseline,
@@ -15,4 +18,6 @@ export {
   CardHeader,
   CardActions,
   TextField,
+  AppBar,
+  Toolbar,
 } from '@mui/material';

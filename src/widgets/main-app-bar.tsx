@@ -1,8 +1,8 @@
 import React from 'react';
-import { AppBar, Toolbar } from '@mui/material';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import { Container, Typography, Button, IconButton } from 'shared/ui';
 import { Link as RouterLink } from 'react-router-dom';
+
+import { AccountCircle } from 'shared/ui';
+import { Container, Typography, Button, IconButton, AppBar, Toolbar } from 'shared/ui';
 
 const MainAppBar = () => {
   return (
