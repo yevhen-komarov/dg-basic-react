@@ -1,6 +1,5 @@
 import React from 'react';
-import { UserCard } from 'widgets/user-card';
-import { Card, CardContent, CardHeader } from 'shared/ui';
+import { UserCard } from './user-card';
 
 const UserPage = () => {
   React.useEffect(() => {
