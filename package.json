@@ -13,6 +13,7 @@
     "lint:ts": "tsc --noEmit"
   },
   "dependencies": {
+    "@auth0/auth0-spa-js": "^1.22.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.8.2",
