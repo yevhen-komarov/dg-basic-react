@@ -1,25 +1,20 @@
 import React from 'react';
-import { Card, CardContent, Box, CardActions, Button, TextField } from 'shared/ui';
+import { useStore } from 'effector-react';
+import { Card, CardContent, CardMedia, Box, CardActions, Button, TextField } from 'shared/ui';
 import { EditIcon, SaveIcon, CancelIcon } from 'shared/ui';
-
-const defaultUser = {
-  user_id: 'custom|123',
-  username: 'john.doe',
-  family_name: 'Doe',
-  given_name: 'John',
-  email: 'john.doe@test.com',
-};
+import * as userModel from '../model';
 
 const UserCard = () => {
   const [isEditing, setIsEditing] = React.useState(false);
-  const [user, setUser] = React.useState(defaultUser);
+  // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
+  const user = useStore(userModel.$user)!;
 
   const onClickSave = () => {
     setIsEditing(false);
   };
 
   const onChangeTextField = ({ target: { id, value } }: React.ChangeEvent<HTMLInputElement>) => {
-    isEditing && setUser((user) => Object.assign({}, user, { [id]: value }));
+    isEditing && userModel.setUser(Object.assign({}, user, { [id]: value }));
   };
 
   return (
@@ -72,57 +67,34 @@ const UserCard = () => {
         )}
       </CardActions>
 
-      <CardContent>
-        <Box
-          sx={{
-            '& > :not(style)': { m: 1 },
-          }}
-        >
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+        }}
+      >
+        <CardMedia sx={{ height: 200, width: 200 }} component="img" image={user.picture} />
+
+        <CardContent sx={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column' }}>
           <TextField
-            id="user_id"
-            label="user_id"
+            id="nickname"
+            label="nickname"
             color="secondary"
             onChange={onChangeTextField}
             margin="dense"
             size="small"
             variant="outlined"
-            value={user.user_id}
+            value={user.nickname}
           />
           <TextField
-            id="username"
-            label="username"
+            id="name"
+            label="name"
             color="secondary"
             onChange={onChangeTextField}
             margin="dense"
             size="small"
             variant="outlined"
-            value={user.username}
-          />
-        </Box>
-        <Box
-          sx={{
-            '& > :not(style)': { m: 1 },
-          }}
-        >
-          <TextField
-            id="family_name"
-            label="family_name"
-            color="secondary"
-            onChange={onChangeTextField}
-            margin="dense"
-            size="small"
-            variant="outlined"
-            value={user.family_name}
-          />
-          <TextField
-            id="given_name"
-            label="given_name"
-            color="secondary"
-            onChange={onChangeTextField}
-            margin="dense"
-            size="small"
-            variant="outlined"
-            value={user.given_name}
+            value={user.name}
           />
           <TextField
             id="email"
@@ -134,8 +106,8 @@ const UserCard = () => {
             variant="outlined"
             value={user.email}
           />
-        </Box>
-      </CardContent>
+        </CardContent>
+      </Box>
     </Card>
   );
 };

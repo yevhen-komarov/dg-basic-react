@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserCard } from './user-card';
+import { UserCard } from 'entities/user/ui/card';
 
 const UserPage = () => {
   React.useEffect(() => {
